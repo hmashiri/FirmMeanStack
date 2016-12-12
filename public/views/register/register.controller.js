@@ -8,6 +8,7 @@
     {
 
         $scope.user = RegisterUtil.createRegistrationUser();
+        $scope.register = register;
 
         $scope.checkEmailAvailable = function()
         {
@@ -59,29 +60,29 @@
         });
 
 
-        // function register(user)
-        // {
-        //     if(user.password != user.password2 || !user.password || !user.password2)
-        //     {
-        //         $scope.error = "Your passwords don't match";
-        //     }
-        //     else
-        //     {
-        //         UserService
-        //             .register(user)
-        //             .then(
-        //                 function(response) {
-        //                     var user = response.data;
-        //                     if(user != null) {
-        //                         $rootScope.currentUser = user;
-        //                         $location.url("/profile");
-        //                     }
-        //                 },
-        //                 function(err) {
-        //                     $scope.error = err;
-        //                 }
-        //             );
-        //     }
-        // }
+        function register(user)
+        {
+            if(user.password != user.confirmPassword || !user.password || !user.confirmPassword)
+            {
+                $scope.error = "Your passwords don't match";
+            }
+            else
+            {
+                UserService
+                    .register(user)
+                    .then(
+                        function(response) {
+                            var user = response.data;
+                            if(user != null) {
+                                $rootScope.currentUser = user;
+                                $location.url("/profile");
+                            }
+                        },
+                        function(err) {
+                            $scope.error = err;
+                        }
+                    );
+            }
+        }
     }
 })();

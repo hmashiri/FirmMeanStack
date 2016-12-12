@@ -9,7 +9,7 @@
 <input  id="username" ng-model="user.username"  ng-keypress="keypress( $event )" type="email"  ng-blur="checkEmailAvailable()" name="email" class="form-control" placeholder="Username/Email"/>
 <input  ng-model="user.password"  ng-keypress="keypress( $event )" class="form-control" placeholder="Password" type="password"/>
 <input  ng-model="user.confirmPassword" ng-keypress="keypress( $event )" class="form-control" placeholder="Password again" type="password"/>
-<button ng-click="register()" class="btn btn-primary btn-block">Register</button><br/>
+<button ng-click="register(user)" class="btn btn-primary btn-block">Register</button><br/>
 
 {{message}}
 </div>

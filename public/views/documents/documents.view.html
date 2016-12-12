@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1>Documents {{vm.imageValues}}</h1>
+                <h1>Documents</h1>
             </div>
 
             <div class="panel-body">
@@ -23,8 +23,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="color: black"></td>
+                        <tr ng-repeat="meta in vm.imageValues">
+                            <td> <img ng-src="http://localhost:3001/api/files/{{meta.imageId}}" height="100px" width="100px"/></td>
                             <td></td>
                             <td></td>
                         </tr>

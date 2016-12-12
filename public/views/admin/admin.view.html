@@ -1,6 +1,25 @@
 <h1>Admin</h1>
 
-<h2>User List</h2>
+<h2>Client List</h2>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+
+</table>
 
 <table class="table table-striped">
     <tr>
@@ -14,7 +33,9 @@
         <td><button ng-click="add(user)" class="btn btn-primary">&plus;</button>
         <td><button ng-click="update(user)" class="btn btn-success">&check;</button>
     </tr>
-        
+</table>
+<P></P>
+<table class="table table-striped">
     </tr>
     <tr ng-repeat="user in users">
         <td>{{user._id}}</td>

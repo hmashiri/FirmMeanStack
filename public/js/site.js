@@ -68,6 +68,8 @@ var RegisterUtil = new function()
 
 
     this.createRegistrationUser = function() { return new RegistrationUser(); };
+
+
 };
 
 

@@ -81,7 +81,6 @@
             if( !RegisterUtil.isReadyToRegister( user ) )
             {
                 // let controller know of error, or do somethign angular here
-                return;
             }
 
             return $http.post("/api/register", user);
@@ -114,7 +113,7 @@
             return $http.get("/api/user");
         }
 
-
+        //
         // function register(user) {
         //     return $http.post("/api/register", user);
         // }
