@@ -27,6 +27,7 @@
                 .when('/documents', {
                     templateUrl: 'views/documents/documents.view.html',
                     controller: 'DocumentsCtrl',
+                    controllerAs: 'vm',
                     resolve: {
                         loggedin: checkLoggedin
                     }
