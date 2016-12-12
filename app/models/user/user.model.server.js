@@ -27,7 +27,7 @@ module.exports = function() {
             lastName: String,
             email: String,
             roles: [String]
-        }, {collection: "user"});
+        }, {collection: "user", versionKey: false, timestamps: true});
 
     var UserModel = mongoose.model('UserModel', UserSchema);
 
