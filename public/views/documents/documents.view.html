@@ -6,7 +6,6 @@
 
 <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
 
-
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -14,19 +13,28 @@
             </div>
 
             <div class="panel-body">
+                <input type="file" id="file" name="file"/>
+                        <P>
+
+                        </P><button ng-click="add()">Add</button>
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Document Name</th>
-                            <th>FileType</th>
+                            <th>Document</th>
+                            <th>File Name</th>
                             <th>Download</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <style>
+                        #filefont {
+                            color: blue;
+                        }
+                    </style>
                         <tr ng-repeat="meta in vm.imageValues">
-                            <td> <img ng-src="http://localhost:3001/api/files/{{meta.imageId}}" height="100px" width="100px"/></td>
-                            <td></td>
-                            <td></td>
+                            <td> <img ng-src="http://localhost:3001/api/files/{{meta.imageId}}" height="50px" width="50px"/></td>
+                            <td>{{meta.filename}}</td>
+                            <td><a id="filefont" href="" ng-click="vm.downloadOnClick(meta.imageId, meta.filename)">Download</a></td>
                         </tr>
                     </tbody>
                 </table>
