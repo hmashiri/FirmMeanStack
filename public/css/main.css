@@ -10,43 +10,43 @@
 
 #loginView
 {
-	margin-top: 102px;
+	margin-top: 52px;
 }
 
 #registerView
 
 {
-	margin-top: 102px;
+	margin-top: 52px;
 }
 
 #documentsView
 {
-	margin-top: 117px;
+	margin-top: 57px;
 }
 
 #casesView
 {
-	margin-top: 115px;
+	margin-top: 55px;
 }
 
 #profileView
 {
-	margin-top: 115px;
+	margin-top: 55px;
 }
 
 #messagesView
 {
-	margin-top: 115px;
+	margin-top: 55px;
 }
 
 #adminView
 {
-	margin-top: 115px;
+	margin-top: 55px;
 }
 
 #homeView
 {
-	margin-top: 115px;
+	margin-top: 55px;
 }
 
 .form-control, .btn-block
@@ -505,6 +505,13 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;
 }
 
+.states
+{
+
+	background:#F6F6F6;
+	overflow: hidden;
+	padding: 85px;
+}
 
 #about-us h4 {
 	color: #909090;
@@ -790,6 +797,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #contact-form-section .btn-primary {
 	background-color: #3285ff;
+	font-size: 12px;
 	border-color:#f6f6f6;
 	border-radius:0;
 	padding:10px 35px;
@@ -802,7 +810,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact-form-section .btn-primary:hover {
-	background-color:#43484E
+	background-color: #1112ff
 }
 
 #contact-form input, 

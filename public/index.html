@@ -71,26 +71,24 @@
                             <li class="scroll"><span ng-show="currentUser"><span ng-show="currentUser.roles.indexOf('admin') != -1">
                                 <a href="#admin">Admin </a></span></span></li>
                             <li class="pull-right"><span ng-show="currentUser"><a href="#logout" ng-click="logout()">Logout</a></span></li>
-                            <li class="scroll"><span ng-show="!currentUser"><a href="http://localhost:3000/#login">Login</a></span></li>
-                            <li class="scroll"><span ng-show="!currentUser"><a href="http://localhost:3000/#register">Register</a></span></li>
+                            <li class="scroll" id="log"><span ng-show="!currentUser"><a href="http://localhost:3000/#login">Login</a></span></li>
+                            <li class="scroll" id="log"><span ng-show="!currentUser"><a href="http://localhost:3000/#register">Register</a></span></li>
 
                         </ul>
                     </div>
                 </div>
             </div><!--/navbar-->
         </header> <!--/#navigation-->
-
-        <div ng-view></div>
     </div>
-
-
+        <div class="states" ng-view></div>
+    </div>
     <section id="contact">
         <div class="container">
             <!--<div class="contact-details">-->
                 <div class="pattern"></div>
                 <div class="row text-center clearfix">
                     <div class="col-sm-6">
-                        <div class="contact-address"><address><p><span>Mashiri</span>Law Firm</p><strong>36 North Kafrul<br>Dhaka Cantonment Area<br> Dhaka-1206, Bangladesh</strong><br><small>( Lorem ipsum dolor sit amet, consectetuer adipiscing elit )</small></address>
+                        <div class="contact-address"><address><p><span>Mashiri</span>Law Firm</p><strong>9750 Miramar Rd.<br>Suite 214<br> San Diego, CA 92126</strong><br><small>( 858 ) 348-4938</small></address>
                             <div class="social-icons">
                                 <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
@@ -102,7 +100,7 @@
                         <div id="contact-form-section">
                             <h2 class="title-one">Contact Us</h2>
                             <div class="status alert alert-success" style="display: none"></div>
-                            <form id="contact-form" class="contact" name="contact-form" method="post" action="mailto: hmashiri@hotmail.com">
+                            <form id="contact-form" class="contact" name="contact-form" method="post" action="mailto:hmashiri@hotmail.com" enctype="text/plain">
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control name-field" required="required" placeholder="Your Name"></div>
                                 <div class="form-group">
@@ -110,9 +108,12 @@
                                 </div>
                                 <div class="form-group">
                                     <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                    <INPUT NAME="redirect" TYPE="hidden" VALUE="index.html">
+                                    <INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="index.html">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Send</button>
+                                    <input type="submit" class="btn btn-primary" value="Send" />
+                                    <input type="reset"  class="btn btn-primary" value="Clear" />
                                 </div>
                             </form>
                         </div>
