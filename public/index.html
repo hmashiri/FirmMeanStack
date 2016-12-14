@@ -51,60 +51,90 @@
 
     <body ng-app="PassportApp">
 
-    <header id="navigation">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="http://localhost:63342/PassportJS/MeanRegLog/himu/index.html"><h1 style="color: black; font-family: Oswald">Mashiri Law Firm</h1></a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="scroll active"><span ng-show="currentUser"><a href="#home">Home</a></span></li>
-                        <li class="scroll"><span ng-show="currentUser"><a href="#cases">Cases</a></span></li>
-                        <li class="scroll"><span ng-show="currentUser"><a href="#documents">Documents</a></span></li>
-                        <li class="scroll"><span ng-show="currentUser"><a href="#messages">Messages</a></span></li>
-                        <li class="scroll"><span ng-show="currentUser"><a href="#profile">Account Settings</a></span></li>
-                        <li class="scroll"><span ng-show="currentUser"><a href="#logout" ng-click="logout()">Logout</a></span></li>
-                        <li class="scroll"><span ng-show="!currentUser"><a href="#login">Login</a></span></li>
-                        <li class="scroll"><span ng-show="!currentUser"><a href="http://localhost:3000/#register">Register</a></span></li>
+    <div class="container" ng-controller="NavCtrl">
+        <header id="navigation">
+            <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://localhost:63342/PassportJS/MeanRegLog/himu/index.html"><h1 style="color: black; font-family: Oswald">Mashiri Law Firm</h1></a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="scroll active"><span ng-show="currentUser"><a href="#home">Home</a></span></li>
+                            <li class="scroll"><span ng-show="currentUser"><a href="#cases">Cases</a></span></li>
+                            <li class="scroll"><span ng-show="currentUser"><a href="#documents">Documents</a></span></li>
+                            <li class="scroll"><span ng-show="currentUser"><a href="#messages">Messages</a></span></li>
+                            <li class="scroll"><span ng-show="currentUser"><a href="#profile">Account Settings</a></span></li>
+                            <li class="scroll"><span ng-show="currentUser"><span ng-show="currentUser.roles.indexOf('admin') != -1">
+                                <a href="#admin">Admin </a></span></span></li>
+                            <li class="pull-right"><span ng-show="currentUser"><a href="#logout" ng-click="logout()">Logout</a></span></li>
+                            <li class="scroll"><span ng-show="!currentUser"><a href="http://localhost:3000/#login">Login</a></span></li>
+                            <li class="scroll"><span ng-show="!currentUser"><a href="http://localhost:3000/#register">Register</a></span></li>
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
+            </div><!--/navbar-->
+        </header> <!--/#navigation-->
+
+        <div ng-view></div>
+    </div>
+
+
+    <section id="contact">
+        <div class="container">
+            <!--<div class="contact-details">-->
+                <div class="pattern"></div>
+                <div class="row text-center clearfix">
+                    <div class="col-sm-6">
+                        <div class="contact-address"><address><p><span>Mashiri</span>Law Firm</p><strong>36 North Kafrul<br>Dhaka Cantonment Area<br> Dhaka-1206, Bangladesh</strong><br><small>( Lorem ipsum dolor sit amet, consectetuer adipiscing elit )</small></address>
+                            <div class="social-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="contact-form-section">
+                            <h2 class="title-one">Contact Us</h2>
+                            <div class="status alert alert-success" style="display: none"></div>
+                            <form id="contact-form" class="contact" name="contact-form" method="post" action="mailto: hmashiri@hotmail.com">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control name-field" required="required" placeholder="Your Name"></div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control mail-field" required="required" placeholder="Your Email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </section> <!--/#contact-->
+    <footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                <p>Copyright &copy; 2016 - Firm Connection | All Rights Reserved</p>
             </div>
-        </div><!--/navbar-->
-    </header> <!--/#navigation-->
+        </div>
+    </footer> <!--/#footer-->
 
-
-
-    <!--<span ng-show="!currentUser">-->
-                    <!--<a href="#login">Login</a> |-->
-                    <!--<a href="#register">Register</a>-->
-                <!--</span>-->
-
-
-                <span ng-show="currentUser">
-                    <a href="#home">Home</a> |
-                    <span></span>
-                    <a href="#cases">Cases</a> |
-                    <span></span>
-                    <a href="#documents">Documents</a> |
-                    <span></span>
-                    <a href="#messages">Messages</a> |
-                    <span></span>
-
-                    <a href="#profile">Account Settings</a> |
-                    <a class="pull-right" href="#logout" ng-click="logout()"> Logout</a>
-
-                    <span ng-show="currentUser.roles.indexOf('admin') != -1">
-                    <a href="#admin">Admin </a>
-                    </span>
-                </span>
-
-
-            <div ng-view></div>
-
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

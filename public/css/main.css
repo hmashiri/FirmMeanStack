@@ -16,7 +16,37 @@
 #registerView
 
 {
-	margin-top: 102px
+	margin-top: 102px;
+}
+
+#documentsView
+{
+	margin-top: 117px;
+}
+
+#casesView
+{
+	margin-top: 115px;
+}
+
+#profileView
+{
+	margin-top: 115px;
+}
+
+#messagesView
+{
+	margin-top: 115px;
+}
+
+#adminView
+{
+	margin-top: 115px;
+}
+
+#homeView
+{
+	margin-top: 115px;
 }
 
 .form-control, .btn-block
@@ -243,7 +273,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
   border-bottom: 0;
   box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 3px;
-  padding-bottom: 8px;
+  padding-bottom: 7px;
 }
 
 #navigation .navbar-toggle{
@@ -254,6 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 #navigation .navbar-brand h1{
   padding: 0;
   margin: 0;
+	font-size: 34px;
 }
 
 #navigation .navbar-nav.navbar-right li {
@@ -274,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 	-moz-transition: all .9s ease 0s;
 	-o-transition: all .9s ease 0s;
 	transition: all .9s ease 0s;
-	padding: 6px 15px;
+	padding: 6px 12px;
 }
 
 #navigation .navbar-inverse .navbar-nav  .active  a,  
@@ -450,7 +481,7 @@ h1, h2, h3, h4, h5, h6 {
 .title-one {
 	color: #666666;
 	display: inline-block;
-	font-size: 32px;
+	font-size: 24px;
 	font-weight: 600;
 	padding-bottom:10px;
 	text-align: center;
@@ -669,6 +700,7 @@ h1, h2, h3, h4, h5, h6 {
 	position:relative;
 	padding-bottom:85px;
 	border-top:2px solid #ddd
+
 }
 
 #contact .contact-heading {
