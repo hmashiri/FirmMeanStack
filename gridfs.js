@@ -95,7 +95,7 @@ router.get('/', function( req, res ) {
 // writing a file (accessed at POST http://localhost:3001/api/files) to the database
 .post('/', function(req, res) {
 
-    console.log("Files route POST /files");
+    console.log("Files route POST /");
 
     // lets see what the request looks like
     console.log(req);
