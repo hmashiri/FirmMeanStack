@@ -1,55 +1,55 @@
 
 <div class="loginpic">
-<div id="loginView">
+    <div id="loginView">
 
-<div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 panel panel-primary ">
-<center><h1>Login</h1></center>
-<div class="panel-body col-lg-12 col-md-12 col-sm-12">
-<div ng-if="error" class="alert alert-danger col-lg-4 col-lg-offset-4 col-sm-4 col-sm-offset-4">
-    <label>Invalid login/password, please try again.</label>
-</div>
-<div class="col-xs-6 col-xs-offset-3 col-lg-6 col-lg-offset-3">
-    <input
-      ng-model="user.username"
-      ng-keypress="keypress( $event )"
-      class="form-control"
-      placeholder="username"/>
+        <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2 panel panel-primary ">
+            <center><h1>Login</h1></center>
+            <div class="panel-body col-lg-12 col-md-12 col-sm-12">
+                <div ng-if="error" class="alert alert-danger col-lg-4 col-lg-offset-4 col-sm-4 col-sm-offset-4">
+                    <label>Invalid login/password, please try again.</label>
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 col-lg-6 col-lg-offset-3">
+                    <input
+                            ng-model="user.username"
+                            ng-keypress="keypress( $event )"
+                            class="form-control"
+                            placeholder="username"/>
 
-    <input
-      ng-model="user.password"
-      ng-keypress="keypress( $event )"
-      class="form-control"
-      placeholder="password"
-      type="password"/>
+                    <input
+                            ng-model="user.password"
+                            ng-keypress="keypress( $event )"
+                            class="form-control"
+                            placeholder="password"
+                            type="password"/>
 
-    <button
-      ng-click="login(user)"
-      class="btn btn-success btn-block-sm col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+                    <button
+                            ng-click="login(user)"
+                            class="btn btn-success btn-block-sm col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
 
-      Login
+                        Login
 
-    </button>
-    <br>
-    <br>
-    <P class="text-center">Or Login with...</P>
-    <a href="/auth/google"
-       class="btn btn-danger btn-block-sm col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-      <span class="fa fa-google-plus"></span>
-      Google
-    </a>
+                    </button>
+                    <br>
+                    <br>
+                    <P class="text-center">Or Login with...</P>
+                    <a href="/auth/google"
+                       class="btn btn-danger btn-block-sm col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                        <span class="fa fa-google-plus"></span>
+                        | Google
+                    </a>
 
-    <a href="/auth/facebook"
-       class="btn btn-primary btn-block-sm">
-      <span class="fa fa-facebook"></span>
-      Facebook
-    </a>
-    <P></P>
-</div>
+                    <a href="/auth/facebook"
+                       class="btn btn-primary btn-block-sm">
+                        <span class="fa fa-facebook"></span>
+                        Facebook
+                    </a>
+                    <P></P>
+                </div>
 
-</div>
-</div>
-</div>
-<P>
+            </div>
+        </div>
+    </div>
+    <P>
 
-</P>
+    </P>
 </div>
