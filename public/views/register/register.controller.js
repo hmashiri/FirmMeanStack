@@ -24,6 +24,8 @@
 
         $scope.keypress = function( event )
         {
+
+            //console.log('key pressed : ' + event.key);
             if( event.key === "Enter" )
             {
                 $scope.register();

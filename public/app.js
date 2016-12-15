@@ -1,4 +1,4 @@
 (function() {
-    angular.module("PassportApp", ["ngRoute"]);
+    angular.module("PassportApp", ["ngRoute", "ngFileUpload"]);
 })();
 

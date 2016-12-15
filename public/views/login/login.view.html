@@ -11,11 +11,13 @@
 <div class="col-xs-6 col-xs-offset-3 col-lg-6 col-lg-offset-3">
     <input
       ng-model="user.username"
+      ng-keypress="keypress( $event )"
       class="form-control"
       placeholder="username"/>
 
     <input
       ng-model="user.password"
+      ng-keypress="keypress( $event )"
       class="form-control"
       placeholder="password"
       type="password"/>

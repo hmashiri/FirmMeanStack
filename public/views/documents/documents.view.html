@@ -1,48 +1,51 @@
 <div id="documentsView">
-<h1><center>Documents</center></h1>
+    <h1><center>Documents</center></h1>
+    <!--Welcome {{currentUser.username}}-->
+    <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
+
+   <button class="btn btn-primary btn-md" ng-hide="addDocuments == true;" ng-click="addDocuments=!addDocuments"> Add a Document</button>
+   <div class="container create-documents" ng-hide="!addDocuments">
+       <div class="form-group">
+           <label for="docTitle">Document</label>
+
+       </div>
+
+<input class="btn btn-primary" type="file" ngf-select='vm.upload($file)'>
 
 
+       <button class="btn btn-success" ng-click="addDocuments = false;">Back</button>
+   </div>
 
-<!--Welcome {{currentUser.username}}-->
+   <div class="col-md-12">
+       <div class="panel panel-default">
+           <div class="panel-heading">
+               <h1>Documents</h1>
+           </div>
 
-<span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
+           <div class="panel-body">
 
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1>Documents</h1>
-            </div>
+               <table class="table table-hover">
+                   <thead>
+                       <tr>
+                           <th>Document</th>
+                           <th>File Name</th>
+                           <th>Download</th>
+                       </tr>
+                   </thead>
+                   <tbody>
 
-            <div class="panel-body">
-                <input type="file" id="file" name="file"/>
-                        <P>
 
-                        </P><button ng-click="add()">Add</button>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Document</th>
-                            <th>File Name</th>
-                            <th>Download</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <style>
-                        #filefont {
-                            color: blue;
-                        }
-                    </style>
-                        <tr ng-repeat="meta in vm.imageValues">
-                            <td> <img ng-src="http://localhost:3001/api/files/{{meta.imageId}}" height="50px" width="50px"/></td>
-                            <td>{{meta.filename}}</td>
-                            <td><a id="filefont" href="" ng-click="vm.downloadOnClick(meta.imageId, meta.filename)">Download</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                       <tr >
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
 
-        </div>
-    </div>
+       </div>
+   </div>
 
 
 </span>
