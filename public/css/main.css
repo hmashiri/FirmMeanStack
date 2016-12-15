@@ -41,12 +41,12 @@
 
 #adminView
 {
-	margin-top: 55px;
+	margin-top: 115px;
 }
 
 #homeView
 {
-	margin-top: 55px;
+	margin-top: 115px;
 }
 
 .form-control, .btn-block
@@ -504,6 +504,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: absolute;
 	top: 0;
 }
+
 
 .states
 {
