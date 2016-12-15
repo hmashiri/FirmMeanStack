@@ -32,19 +32,20 @@
         };
 
 
-        $scope.register = function()
-        {
-            if( RegisterUtil.isReadyToRegister( $scope.user ) )
-            {
-                $log.info("User is ready to register");
-
-            }
-            else
-            {
-                $log.warn( "User not ready to register");
-                $scope.error = RegistrationService.errorMessage( $scope.user );
-            }
-        };
+        // $scope.register = function()
+        // {
+        //     if( RegisterUtil.isReadyToRegister( $scope.user ) )
+        //     {
+        //         $log.info("User is ready to register");
+        //
+        //
+        //     }
+        //     else
+        //     {
+        //         $log.warn( "User not ready to register");
+        //         $scope.error = RegistrationService.errorMessage( $scope.user );
+        //     }
+        // };
 
         $scope.$on( RegistrationMessage.EMAIL_AVAILABLE_RESPONSE, function( msg, data )
         {
@@ -62,6 +63,17 @@
 
         function register(user)
         {
+            if( RegisterUtil.isReadyToRegister( $scope.user ) )
+                {
+                    $log.info("User is ready to register");
+
+
+                }
+                else
+                {
+                    $log.warn( "User not ready to register");
+                    $scope.error = RegistrationService.errorMessage( $scope.user );
+                }
             if(user.password != user.confirmPassword || !user.password || !user.confirmPassword)
             {
                 $scope.error = "Your passwords don't match";
@@ -75,7 +87,7 @@
                             var user = response.data;
                             if(user != null) {
                                 $rootScope.currentUser = user;
-                                $location.url("/profile");
+                                $location.url("/home");
                             }
                         },
                         function(err) {
