@@ -24,6 +24,10 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/lawfirmResources'); // connect to our database
 
+var db = mongoose.connection;
+
+
+
 var Message = require('./app/models/message');
 var CaseInfo    = require('./app/models/caseInfo');
 
@@ -145,7 +149,7 @@ router.route('/caseInfo')
         caseInfo.caseNumber = req.body.caseNumber;
         caseInfo.practiceArea = req.body.practiceArea;
         caseInfo.attorney = req.body.attorney;
-        caseinfo.customerName = req.body.customerName;
+        caseInfo.customerName = req.body.customerName;
 
 
         // set caseinfo name (comes from the request)
@@ -153,11 +157,20 @@ router.route('/caseInfo')
 
         // get caseinfo case name (comes from the request)
         console.log("message:" + caseInfo.caseName);
-        caseInfo.save(function(err) {
+        caseInfo.save(function(err)
+        {
             if (err)
+            {
                 res.send(err);
+            }
 
-            res.json({ caseInfo: 'caseInfo name created!' });
+            CaseInfo.find().exec( function( err, caseList )
+            {
+                if( err ) return console.error( err );
+
+                console.log('just retreived caselist : ' + caseList.length );
+                res.json({ caseInfo: 'caseInfo name created!', caseList: caseList });
+            });
         });
 
 
@@ -165,6 +178,8 @@ router.route('/caseInfo')
 
     // get all the cases data (accessed at GET http://localhost:3002/api/caseinfo)
     .get(function(req, res) {
+
+        console.log('inside /api/caseInfo get');
         CaseInfo.find(function(err, caseInfo) {
             if (err)
                 res.send(err);
@@ -172,6 +187,29 @@ router.route('/caseInfo')
             res.json(caseInfo);
         });
     });
+
+router.route('/caseInfo/practiceArea').get(function( req, res )
+{
+    CaseInfo.distinct('practiceArea').exec( function( err, practiceAreaList )
+    {
+        if( err ) return console.error( err );
+
+        console.log( practiceAreaList );
+        res.json( { practiceAreaList: practiceAreaList });
+    });
+});
+
+
+router.route('/caseInfo/attorney').get(function( req, res )
+{
+    CaseInfo.distinct('attorney').exec( function( err, attorneyList )
+    {
+        if( err ) return console.error( err );
+
+        console.log( attorneyList );
+        res.json( { attorneyList: attorneyList });
+    });
+});
 
 // on routes that end in /caseinfo/:caseinfo_id
 // ----------------------------------------------------

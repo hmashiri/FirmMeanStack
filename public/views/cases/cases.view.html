@@ -33,10 +33,12 @@
                         <label>Case Number</label>
                         <input id="title" name="title" type="text" ng-model="vm.caseNumber" class="form-control" required>
                         <label>Attorney Assigned</label>
-                        <input id="title" name="title" type="text" ng-model="vm.attorney" class="form-control" required>
+                        <!--<input id="title" name="title" type="text" ng-model="vm.attorney" class="form-control" required>-->
+                        <select class="form-control" ng-model="vm.attorney" ng-options="a for a in vm.attorneyList"></select>
+
                         <label>Practice Area</label>
-                        <!--<input id="title" name="title" type="text" ng-model="vm.practiceArea" class="form-control" required>-->
-                        <select ng-model="vm.practiceArea" ng-repeat="caseinfo in vm.cases">{{vm.caseinfo.practiceArea}}</select>
+                        <select class="form-control" ng-model="vm.practiceArea" ng-options="p for p in vm.practiceAreaList"></select>
+
                         <button id="submit" type="button" class="btn btn-md" ng-click="vm.addCases()">Add Case</button>
 
                     </div>

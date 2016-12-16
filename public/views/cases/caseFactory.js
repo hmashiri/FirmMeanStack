@@ -7,20 +7,37 @@
 
     CaseFactory.$inject = ['$http', '$q'];
 
-    function CaseFactory($http, $q){
+    function CaseFactory($http, $q ){
         var service = {
 
             caseData: caseData,
-            postCases: postCases
+            postCases: postCases,
+            practiceAreaList: practiceAreaList,
+            attorneyList: attorneyList
         };
         return service;
 
-        function getPracticeAreaList()
+
+        function practiceAreaList()
         {
-            // TODO:
-            // TODO:
-            // TODO:
-            $http.get('/')
+            var defer = $q.defer();
+            $http.get('http://localhost:3002/api/caseInfo/practiceArea').then( function( response )
+            {
+                defer.resolve( response.data );
+            });
+
+            return defer.promise;
+        }
+
+        function attorneyList()
+        {
+            var defer = $q.defer();
+            $http.get('http://localhost:3002/api/caseInfo/attorney').then( function( response )
+            {
+                defer.resolve( response.data );
+            });
+
+            return defer.promise;
         }
 
         function caseData(){
