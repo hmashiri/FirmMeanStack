@@ -61,6 +61,8 @@ router.route('/message')
         message.title = req.body.title;
         message.bodyDescription = req.body.bodyDescription;
         message.createdBy = req.body.createdBy;
+        message.attorney = req.body.attorney;
+        message.practiceArea = req.body.attorney
 
 
         // set message name (comes from the request)
@@ -111,6 +113,8 @@ router.route('/message/:message_id')
             message.title = req.body.title;
             message.bodyDescription = req.body.bodyDescription;
             message.createdBy = req.body.createdBy;
+            message.attorney = req.body.attorney;
+            message.practiceArea = req.body.attorney;
 
             message.save(function(err) {
                 if (err)

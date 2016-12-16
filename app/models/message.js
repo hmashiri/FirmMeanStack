@@ -6,6 +6,8 @@ var MessageSchema   = new Schema({
         title: String,
         bodyDescription: String,
         createdBy: String,
+        attorney: String,
+        practiceArea: String
 
 
     },

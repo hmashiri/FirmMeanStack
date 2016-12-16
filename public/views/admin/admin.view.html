@@ -1,7 +1,5 @@
 <div id="adminView">
 
-<h1>Admin</h1>
-
 <h2>Client List</h2>
 
 
@@ -32,23 +30,23 @@
         <td><input ng-model="user.lastName" class="form-control" placeholder="last"/></td>
         <td><input ng-model="user.email" class="form-control" type="email" placeholder="email"/></td>
         <td><input ng-model="user.roles" class="form-control" placeholder="roles"/></td>
-        <td><button ng-click="add(user)" class="btn btn-primary">&plus;</button>
+        <td><button ng-click="add(user)" class="btn btn-primary">Show List of Clients</button>
         <td><button ng-click="update(user)" class="btn btn-success">&check;</button>
     </tr>
 </table>
 <P></P>
-<table class="table table-striped">
-    </tr>
-    <tr ng-repeat="user in users">
-        <td>{{user._id}}</td>
-        <td>{{user.username}}</td>
-        <td>&nbsp;</td>
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.roles}}</td>
-        <td><button ng-click="remove(user)" class="btn btn-danger">X</button>
-        <td><button ng-click="select(user)" class="btn btn-success">...</button>
-    </tr>
-</table>
+<!--<table class="table table-striped">-->
+    <!--</tr>-->
+    <!--<tr ng-repeat="user in users">-->
+        <!--<td>{{user._id}}</td>-->
+        <!--<td>{{user.username}}</td>-->
+        <!--<td>&nbsp;</td>-->
+        <!--<td>{{user.firstName}}</td>-->
+        <!--<td>{{user.lastName}}</td>-->
+        <!--<td>{{user.email}}</td>-->
+        <!--<td>{{user.roles}}</td>-->
+        <!--<td><button ng-click="remove(user)" class="btn btn-danger">X</button>-->
+        <!--<td><button ng-click="select(user)" class="btn btn-success">...</button>-->
+    <!--</tr>-->
+<!--</table>-->
 </div>

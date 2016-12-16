@@ -1,53 +1,54 @@
 <div id="documentsView">
-    <h1><center>Documents</center></h1>
-    <!--Welcome {{currentUser.username}}-->
-    <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
-
-   <button class="btn btn-primary btn-md" ng-hide="addDocuments == true;" ng-click="addDocuments=!addDocuments"> Add a Document</button>
+   <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
+<div class="col-md-12">
+   <button class="btn btn-primary btn-md pull-right" ng-hide="addDocuments == true;" ng-click="addDocuments=!addDocuments"> Add a Document</button>
    <div class="container create-documents" ng-hide="!addDocuments">
-       <div class="form-group">
-           <label for="docTitle">Document</label>
-
-       </div>
-
-<input class="btn btn-primary" type="file" ngf-select='vm.upload($file)'>
-
-
-       <button class="btn btn-success" ng-click="addDocuments = false;">Back</button>
-   </div>
-
-   <div class="col-md-12">
-       <div class="panel panel-default">
-           <div class="panel-heading">
-               <h1>Documents</h1>
+       <div class="form-group pull-right">
+           <button class="btn btn-success pull-right" type="file" ngf-select='vm.upload($file)'>Choose File</button>
+           <div ng-show="vm.fileUploadInProgress" idle-countdown="countdown" ng-init="" class="progressbar">
+               <uib-progressbar max="10" value="countdown" animate="false" type="success" class="progress-striped active">
+                   {{vm.fileUploadMessage}}</uib-progressbar>
            </div>
-
-           <div class="panel-body">
-
-               <table class="table table-hover">
-                   <thead>
-                       <tr>
-                           <th>Document</th>
-                           <th>File Name</th>
-                           <th>Download</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-
-
-                       <tr >
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                       </tr>
-                   </tbody>
-               </table>
-           </div>
-
        </div>
+       <button class="btn btn-warning pull-right" ng-click="addDocuments = false;">Back</button>
    </div>
+</div>
+</div>
+
+
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>Documents</h1>
+        </div>
+
+        <div class="panel-body">
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Document Name</th>
+                    <th>Upload Date</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="file in vm.files">
+                    <td>{{file.filename}}</td>
+                    <td>{{file.uploadDate}}</td>
+                    <td>
+                        <button class="btn btn-warning" ng-click="vm.downloadFile(file._id, file.filename)">Download</button>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
 
 
 </span>
-
 </div>

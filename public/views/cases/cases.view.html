@@ -67,7 +67,37 @@
         </span>
 </div>
 
-    <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1>
+    <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
          <p>Welcome {{currentUser.lastName}}, {{currentUser.firstName}}</p>
-    </span>
+
+
+<div class="col-md-12">
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <h1>Cases</h1>
+    </div>
+
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Event</th>
+                <th>Case</th>
+                <th>Action Needed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>There are currently no cases for user {{currentUser.firstName}} {{currentUser.lastName}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div> </span>
+
 
