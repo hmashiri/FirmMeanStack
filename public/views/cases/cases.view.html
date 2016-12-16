@@ -67,7 +67,7 @@
         </span>
 </div>
 
-    <span ng-hide="currentUser">
+    <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1>
          <p>Welcome {{currentUser.lastName}}, {{currentUser.firstName}}</p>
     </span>
 
