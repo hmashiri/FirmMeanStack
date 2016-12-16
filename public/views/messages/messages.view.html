@@ -7,5 +7,43 @@
 Welcome {{currentUser.username}}
 
 </span>
+    <P></P>
+    <h1>Send Message</h1>
 
-</div>
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.2.1/css/bootstrap-markdown.min.css">
+
+
+    <script src="http://toopay.github.io/bootstrap-markdown/js/markdown.js"></script>
+    <script src="http://toopay.github.io/bootstrap-markdown/js/to-markdown.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.2.1/js/bootstrap-markdown.js"></script>
+
+
+    <div class="container">
+        <div class="row">
+
+            <form>
+                <input class="form-control" name="title" ng-model="vm.title" type="text" placeholder="Title:" /><p></p>
+                <textarea name="content" ng-model="vm.bodyDescription" data-provide="markdown" rows="10">
+#Heading ONE
+
+- this is heading two
+- and heding three
+
+> quote here
+
+
+    </textarea><p></p>
+                <input class="form-control" name="name" ng-model="vm.createdBy" type="text" placeholder="Your Name:" />
+
+                <hr/>
+                <button id="submit" type="button" class="btn btn-md" ng-click="vm.addMessage()">Submit</button>
+            </form>
+
+
+        </div>
+
+    </div>
+
+

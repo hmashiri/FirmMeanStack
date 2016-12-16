@@ -1,11 +1,13 @@
 (function() {
     angular.module("PassportApp")
+
         .config(function($routeProvider, $httpProvider) {
 
             $routeProvider
               .when('/home', {
                   templateUrl: 'views/home/home.view.html',
                   controller: 'HomeController',
+                  controllerAs: 'vm',
                   resolve: {
                       loggedin: checkLoggedin
                   }
@@ -19,7 +21,8 @@
               })
                 .when('/messages', {
                     templateUrl: 'views/messages/messages.view.html',
-                    controller: 'MessagesCtrl',
+                    controller: 'MessageCtrl',
+                    controllerAs: 'vm',
                     resolve: {
                         loggedin: checkLoggedin
                     }
@@ -35,6 +38,7 @@
                 .when('/cases', {
                     templateUrl: 'views/cases/cases.view.html',
                     controller: 'CasesCtrl',
+                    controllerAs: 'vm',
                     resolve: {
                         loggedin: checkLoggedin
                     }

@@ -6,6 +6,7 @@ var CaseInfoSchema = new Schema({
     attorney: String,
     caseNumber: String,
     practiceArea: String,
+    customerName: String
 
 
 }, {

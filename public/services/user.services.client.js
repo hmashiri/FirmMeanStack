@@ -70,7 +70,8 @@
             findAllUsers: findAllUsers,
             deleteUser: deleteUser,
             updateUser: updateUser,
-            createUser: createUser
+            createUser: createUser,
+
         };
 
         return api;

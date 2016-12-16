@@ -1,17 +1,26 @@
 <div id="registerView">
-<center><h1>Register</h1></center>
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 panel panel-primary">
+        <center><h1>Register</h1></center>
 
-<div ng-if="error" class="alert alert-danger col-lg-4 col-lg-offset-4 text-center">
-    <label>{{error}}</label>
-</div>
-<div class="col-xs-6 col-xs-offset-3">
-<input  ng-model="user.firstName"  ng-keypress="keypress( $event )" type="text"  class="form-control" placeholder="First Name"/>
-<input  ng-model="user.lastName"  ng-keypress="keypress( $event )" type="text"  class="form-control" placeholder="Last Name"/>
-<input  id="username" ng-model="user.username"  ng-keypress="keypress( $event )" type="email"  ng-blur="checkEmailAvailable()" name="email" class="form-control" placeholder="Username/Email"/>
-<input  ng-model="user.password"  ng-keypress="keypress( $event )" class="form-control" placeholder="Password" type="password"/>
-<input  ng-model="user.confirmPassword" ng-keypress="keypress( $event )" class="form-control" placeholder="Password again" type="password"/>
-<button ng-click="register(user)" class="btn btn-primary btn-block">Register</button><br/>
+        <div ng-if="error" class="alert alert-danger col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 text-center">
+            <label>{{error}}</label>
+        </div>
 
-{{message}}
-</div>
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3 col-md-12 col-md-offset-3 col-sm-12">
+
+            <input  ng-model="user.firstName"  ng-keypress="keypress( $event )" type="text"  class="form-control" placeholder="First Name"/>
+
+            <input  ng-model="user.lastName"  ng-keypress="keypress( $event )" type="text"  class="form-control" placeholder="Last Name"/>
+
+            <input  id="username" ng-model="user.username"  ng-keypress="keypress( $event )" type="email"  ng-blur="checkEmailAvailable()" name="email" class="form-control" placeholder="Username/Email"/><input  ng-model="user.password"  ng-keypress="keypress( $event )" class="form-control" placeholder="Password" type="password"/>
+
+            <input  ng-model="user.confirmPassword" ng-keypress="keypress( $event )" class="form-control" placeholder="Password again" type="password"/>
+
+            <button ng-click="register(user)" class="btn btn-success btn-block">Register</button><br/>
+            <P>
+                Already registered? <a href="#login">click Login here</a>
+            </P>
+            {{message}}
+        </div>
+    </div>
 </div>

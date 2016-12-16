@@ -1,11 +1,71 @@
+
 <div id="casesView">
 
-<h1>Cases</h1>
+    <h1><center>Cases</center></h1>
+    <span ng-show="currentUser.roles.indexOf('admin') != -1">
+    <div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4><center>Welcome {{currentUser.lastName}}, {{currentUser.firstName}}</center></h4>
+                </div>
 
-<span ng-show="currentUser">
+                <div class="panel-body">
+                    <p><label>Email:</label> {{currentUser.email}}</p>
 
-Welcome {{currentUser.lastName}}, {{currentUser.firstName}}
+                    <p><label>Welcome to the admin section {{currentUser.firstName}}!</label></p>
+                    <p>You are currently at the home page, You are currently logged in as an admin user. To the right you can add cases, below are a list of the recent activity feeds.</p>
+                    <p>- <a href="#profile">Settings</a></p>
+                    <P>- <a href="#documents">Documents</a></P>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4><center>Add a case</center> </h4>
+                </div>
 
-</span>
+                <div class="panel-body">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <label>Case Name</label>
+                        <input id="title" name="title" type="text" ng-model="vm.caseName" class="form-control" required>
+                        <label>Case Number</label>
+                        <input id="title" name="title" type="text" ng-model="vm.caseNumber" class="form-control" required>
+                        <label>Attorney Assigned</label>
+                        <input id="title" name="title" type="text" ng-model="vm.attorney" class="form-control" required>
+                        <label>Practice Area</label>
+                        <!--<input id="title" name="title" type="text" ng-model="vm.practiceArea" class="form-control" required>-->
+                        <select ng-model="vm.practiceArea" ng-repeat="caseinfo in vm.cases">{{vm.caseinfo.practiceArea}}</select>
+                        <button id="submit" type="button" class="btn btn-md" ng-click="vm.addCases()">Add Case</button>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <table class="table table-striped col-lg-12" >
+           <tr>
+                <th>Case Name</th>
+                <th>Case Number</th>
+               <th>Practice Area</th>
+                <th>Attorney Assigned</th>
+            </tr>
+
+            <tr ng-repeat="caseinfo in vm.cases">
+                <td>{{caseinfo.caseName}}</td>
+                <td>{{caseinfo.caseNumber}}</td>
+                <td>{{caseinfo.practiceArea}}</td>
+                <td>{{caseinfo.attorney}}</td>
+            </tr>
+
+
+        </table>
+        </span>
 </div>
+
+    <span ng-hide="currentUser">
+         <p>Welcome {{currentUser.lastName}}, {{currentUser.firstName}}</p>
+    </span>
+

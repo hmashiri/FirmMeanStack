@@ -144,7 +144,8 @@ router.route('/caseInfo')
         caseInfo.caseName = req.body.caseName;
         caseInfo.caseNumber = req.body.caseNumber;
         caseInfo.practiceArea = req.body.practiceArea;
-        caseInfo.attorney = req.body.attorney
+        caseInfo.attorney = req.body.attorney;
+        caseinfo.customerName = req.body.customerName;
 
 
         // set caseinfo name (comes from the request)
@@ -196,6 +197,7 @@ router.route('/caseInfo/:caseInfo_id')
             caseInfo.caseNumber = req.body.caseNumber;
             caseInfo.practiceArea = req.body.practiceArea;
             caseInfo.attorney = req.body.attorney;
+            caseInfo.customerName = req.body.customerName;
 
             caseInfo.save(function(err) {
                 if (err)
@@ -218,6 +220,8 @@ router.route('/caseInfo/:caseInfo_id')
             res.json({ message: 'Successfully deleted' });
         });
     });
+
+
 
 
 // REGISTER OUR ROUTES
