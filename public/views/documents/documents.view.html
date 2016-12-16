@@ -1,7 +1,6 @@
 <div id="documentsView">
-   <span ng-show="currentUser" ng-hide="currentUser.roles.indexOf('admin') != -1">
+   <span ng-show="currentUser" ng-show="currentUser.roles.indexOf('admin') != -1">
 <div class="col-md-12">
-   <button class="btn btn-primary btn-md pull-right" ng-hide="addDocuments == true;" ng-click="addDocuments=!addDocuments"> Add a Document</button>
    <div class="container create-documents" ng-hide="!addDocuments">
        <div class="form-group pull-right">
            <button class="btn btn-success pull-right" type="file" ngf-select='vm.upload($file)'>Choose File</button>
@@ -15,12 +14,19 @@
 </div>
 </div>
 
-
+<style>
+    .uploadbutton
+    {
+        margin-top: -45px
+    }
+</style>
 
 <div class="col-md-12">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
         <div class="panel-heading">
             <h1>Documents</h1>
+            <button class="uploadbutton btn btn-success btn-md pull-right" ng-hide="addDocuments == true;" ng-click="addDocuments=!addDocuments"> Add a Document</button>
+
         </div>
 
         <div class="panel-body">

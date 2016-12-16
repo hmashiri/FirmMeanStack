@@ -68,13 +68,22 @@ router.route('/message')
         // set message name (comes from the request)
         console.log("body:" + req.body);
 
-        // get message title (comes from the request)
+        // get caseinfo case name (comes from the request)
         console.log("message:" + message.title);
-        message.save(function(err) {
+        message.save(function(err)
+        {
             if (err)
+            {
                 res.send(err);
+            }
 
-            res.json({ message: 'Message title created!' });
+            Message.find().exec( function( err, messageList )
+            {
+                if( err ) return console.error( err );
+
+                console.log('just retrieved message list : ' + messageList.length );
+                res.json({ message: 'message name created!', messageList: messageList });
+            });
         });
 
 
@@ -172,7 +181,7 @@ router.route('/caseInfo')
             {
                 if( err ) return console.error( err );
 
-                console.log('just retreived caselist : ' + caseList.length );
+                console.log('just retrieved caselist : ' + caseList.length );
                 res.json({ caseInfo: 'caseInfo name created!', caseList: caseList });
             });
         });

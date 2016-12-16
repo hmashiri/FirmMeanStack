@@ -24,8 +24,9 @@
         vm.clear = function()
         {
             vm.practiceArea = (vm.practiceAreaList.length > 0 )? vm.practiceAreaList[0]: '';
-            vm.caseName = '';
-            vm.caseNumber = '';
+            vm.createdBy = '';
+            vm.title = '';
+            vm.bodyDescription = '';
             vm.attorney = (vm.attorneyList.length > 0 )? vm.attorneyList[0]: '';
         };
 
@@ -71,8 +72,8 @@
                 {
                     console.log(response);
                     vm.clear();
-                    $log.info("After saving new case, received a fresh list of all cases : " + response.caseList.length );
-                    vm.messages = response.caseList;
+                    $log.info("After saving new case, received a fresh list of all cases : " + response.messageList.length );
+                    vm.messages = response.messageList;
                     // $location.path('/cases');
                 },
 

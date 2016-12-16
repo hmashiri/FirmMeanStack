@@ -17,6 +17,8 @@
             UserService
                 .findAllUsers()
                 .then(handleSuccess, handleError);
+
+            add({});
         }
 
         init();
