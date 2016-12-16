@@ -1,7 +1,7 @@
 (function() {
     angular
         .module("PassportApp")
-        .controller("DocumentsCtrl", DocumentsCtrl)
+        .controller("DocumentsCtrl", DocumentsCtrl);
 
 
     DocumentsCtrl.$inject = ['$http', '$q', 'Upload', '$scope', '$rootScope', 'documentsFactory'];
@@ -23,6 +23,7 @@
                     vm.files = response;
                 });
         }
+
 
 
 
@@ -48,6 +49,7 @@
             documentsFactory.downloadDocument(fileid, filename).then(
                 function(response) {
                     console.log(response);
+                    vm.downloadfiles = response;
                 },
 
                 function(error) {
