@@ -38,10 +38,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-btn {
-	background-color:#3285ff;
-	color: #FFF;
-	-webkit-box-shadow: inset 0 0 0 2px #ffffff;
-	box-shadow: inset 0 0 0 2px #ffffff;
+	background-color:#800000;
+	color: gold;
+	-webkit-box-shadow: inset 0 0 0 2px gold;
+	box-shadow: inset 0 0 0 2px gold;
 	text-transform: uppercase;
 	width: 190px;
 	text-align: center;
@@ -59,10 +59,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-btn:hover {
-	background-color: #1112ff;
-	-webkit-box-shadow: inset 0 0 0 2px #1112ff;
-	box-shadow: inset 0 0 0 2px #1112ff;
-	color:#fff
+	background-color: gold;
+	-webkit-box-shadow: inset 0 0 0 2px #800000;
+	box-shadow: inset 0 0 0 2px #800000;
+	color:#
 }
 
 
@@ -250,8 +250,8 @@ h1, h2, h3, h4, h5, h6 {
 #navigation .navbar-inverse .navbar-nav  .active  a,  
 #navigation .navbar-inverse .navbar-nav  .active  a:focus, 
 #navigation .navbar-nav.navbar-right li a:hover {
-	color: #fff;
-	background-color: #3285ff;
+	color: gold;
+	background-color: #800000;
 }
 
 
@@ -428,7 +428,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title-one:after {
-	color: #3285ff;
+	color: #800000;
 	content: "||";
 	position: absolute;
 	right: -40px;
@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title-one:before {
-	color: #3285ff;
+	color: #800000;
 	content: "||";
 	left: -40px;
 	position: absolute;
@@ -604,7 +604,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 150px;
 	line-height: 150px;
 	width: 150px;
-	color:#43484E;
+	color:#800000;
 	transition: all 0.9s ease 0s;
 	-moz-transition: all 0.9s ease 0s;
 	-webkit-transition: all 0.9s ease 0s;
@@ -612,11 +612,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .single-service:hover {
-	background-color: #3285ff;
+	background-color: #800000;
 }
 
 .single-service:hover i {
-	color: #1112ff;
+	color: gold;
 	-moz-transform: scale(1.1) rotate(360deg);
 	-webkit-transform: scale(1.1) rotate(360deg);
 	-o-transform: scale(1.1) rotate(360deg);
@@ -700,8 +700,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .social-icons a:hover {
-  color: #3285ff;
-  border: 1px solid #1112ff;
+  color: gold;
+  border: 1px solid #800000;
 }
 
 .contact-address .social-icons, 
@@ -716,7 +716,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-address  p span {
-	color: #3285ff;
+	color: #800000;
 	
 }
 
@@ -726,7 +726,7 @@ h1, h2, h3, h4, h5, h6 {
 	height:390px;
 }
 #contact-form-section .btn-primary {
-	background-color: #3285ff;
+	background-color: #800000;
 	border-color:#f6f6f6;
 	border-radius:0;
 	padding:10px 35px;
@@ -739,7 +739,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact-form-section .btn-primary:hover {
-	background-color:#43484E
+	background-color:gold
 }
 
 #contact-form input, 
