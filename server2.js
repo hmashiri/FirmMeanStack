@@ -273,7 +273,6 @@ router.route('/caseInfo/:caseInfo_id')
 
 
 
-
 // REGISTER OUR ROUTES
 app.use('/api', router);
 
