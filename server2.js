@@ -27,7 +27,6 @@ mongoose.connect('mongodb://localhost:27017/lawfirmResources'); // connect to ou
 var db = mongoose.connection;
 
 
-
 var Message = require('./app/models/message');
 var CaseInfo    = require('./app/models/caseInfo');
 
@@ -51,7 +50,7 @@ router.get('/', function(req, res) {
 
 //=============================================================================
 //                      on routes that end in /message
-// ----------------------------------------------------
+// ----------------------------------------------------------------------------
 router.route('/message')
 
 // create message post route (accessed at POST http://localhost:3002/api/messages)
@@ -284,3 +283,4 @@ app.use('/api', router);
 //================================================================
 app.listen(port);
 console.log('Magic happens on port ' + port);
+
