@@ -1,4 +1,4 @@
-// BASIC SET UP FOR AUTHENTICATION USERADMIN
+// BASIC SET UP FOR AUTHENTICATION USER ADMIN
 
 var express       = require('express');
 var app           = express();
@@ -39,3 +39,4 @@ require("./app/app.js")(app);
 //              connecting to port localhost:3000
 //======================================================================
 app.listen(3000);
+
